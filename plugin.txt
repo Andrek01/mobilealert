@@ -1,0 +1,4 @@
+mobile_alert:
+    plugin_name: mobile_alert
+    phone_id: '482672770195'
+    update_cycle: 420

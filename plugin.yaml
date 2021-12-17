@@ -1,0 +1,73 @@
+# Metadata for the plugin
+plugin:
+    # Global plugin attributes
+    type: interace                   # plugin type (gateway, interface, protocol, system, web)
+    description:
+        de: 'Plugin zum Abgriff der Sensor-Informationen von mobile alert via Web-Interface'
+        en: 'Sample plugin for SmartHomeNG v1.5 and up'
+    maintainer: AndreK01
+#    tester:                         # Who tests this plugin?
+    state: develop                  # change to ready when done with development
+    keywords: mobile alert sensor wetter station
+#    documentation: https://github.com/smarthomeNG/smarthome/wiki/CLI-Plugin        # url of documentation (wiki) page
+#    support: https://knx-user-forum.de/forum/supportforen/smarthome-py
+
+    version: 1.0.0                  # Plugin version (must match the version specified in __init__.py)
+    sh_minversion: 1.5              # minimum shNG version to use this plugin
+#    sh_maxversion:                 # maximum shNG version to use this plugin (leave empty if latest)
+#    py_minversion: 3.6             # minimum Python version to use for this plugin
+#    py_maxversion:                 # maximum Python version to use for this plugin (leave empty if latest)
+    multi_instance: False           # plugin supports multi instance
+    restartable: unknown
+    classname: mobile_alert         # class containing the plugin
+
+parameters:
+
+    phone_id:
+        type: str
+        description:
+            de: 'PhoneID des Mobile-Alert Webportals'
+            en: 'PhoneID for the mobile-alert web-interface'
+
+    update_cycle:
+        type: int
+        default: 420
+        description:
+            de: 'Sekunden bis zum automatischen aktualisieren der Werte'
+            en: 'seconds till the next automatic refresh of values'
+
+item_attributes:
+    # Definition of item attributes defined by this plugin (enter 'item_attributes: NONE', if section should be empty)
+
+    mobile_alert_id:
+        type: str
+        description:
+            de: 'Geräte ID des Sensors'
+            en: 'Device ID of the sensor'
+
+    mobile_alert_unit:
+        type: str
+        default: ''
+        valid_list:
+            - '°C'
+            - '°F'
+            - '%'
+            - 'mm'
+        description:
+            de: 'Einheit die der Sensor liefert'
+            en: 'Unit of the sensor'
+
+item_structs: NONE
+    # Definition of item-structure templates for this plugin (enter 'item_structs: NONE', if section should be empty)
+
+#item_attribute_prefixes:
+    # Definition of item attributes that only have a common prefix (enter 'item_attribute_prefixes: NONE' or ommit this section, if section should be empty)
+    # NOTE: This section should only be used, if really nessesary (e.g. for the stateengine plugin)
+
+plugin_functions: NONE
+    # Definition of plugin functions defined by this plugin (enter 'plugin_functions: NONE', if section should be empty)
+
+
+logic_parameters: NONE
+    # Definition of logic parameters defined by this plugin (enter 'logic_parameters: NONE', if section should be empty)
+
