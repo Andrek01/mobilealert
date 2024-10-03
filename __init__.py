@@ -294,7 +294,7 @@ class mobile_alert(SmartPlugin):
         #request += '&measurementcounts=%s' % ('50,' * len(sensors))
         
         http_header = {
-                        "User-Agent" : "remotemonitor/248 CFNetwork/758.2.8 Darwin/15.0.0",
+                        "User-Agent" : "Dalvik/2.1.0 (Linux; U; Android 11; sdk_gphone_x86_arm Build/RSR1.201013.001)",
                         "Accept-Language" : "en-us",
                         "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
                         "Host" : "www.data199.com:8080",
